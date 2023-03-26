@@ -19,3 +19,6 @@ in this root folder run "docker-compose up -d". This launches all the containers
 
 if you want to run only one docker container without compose-file, you can move into the specific folder that you
 want to run and type "docker build . -t "insert your tagname" "
+
+If you make changes to code, you have to update the images that compose is using with "docker build".
+After this you have to do "docker-compose up -d" again so the updates will flow to it too.
