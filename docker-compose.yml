@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  #these can be named as you want, for all the apps that we want to run at the same time from one file (compose-file...)
+  #you should make sure that the ports are free so no previously started apps are not playing on these ports that compose
+  #is using
+  server1:
+      build:
+        #defining the folder and file to be used for creating the container
+        dockerfile: Dockerfile
+        context: "./server1"
+        #this is required to be able to test the app in the certain ports. Yes, this must be defined here even tho
+        #ports are defined already in the dockerfiles... The first number is the port to be used for us and the 
+        #second one is that where it's running inside the container
+      ports:
+        - 4000:4000
+  server2:
+      build:
+        dockerfile: Dockerfile
+        context: "./server2"
+      ports:
+        - 5000:5000
+      
+
+  client:
+      build:
+        dockerfile: Dockerfile
+        context: ./client
+      ports:
+        - 3000:3000
