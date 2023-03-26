@@ -7,7 +7,7 @@ All the "logic" can be found in App.js file...
 
 ## SERVER1
 Nodejs application that responds to client fetch by sending to it text "Hello world".
-This application also sends (posts) data to server2 after 7 seconds
+This application also sends (posts) data to server2 after 7 seconds and stays in loop doing it.
 For local testing WITHOUT docker: go to folder and "npm install", then "node server.js"
 
 ## SERVER2
